@@ -1,0 +1,115 @@
+@font-face {
+  font-family: "HK Grotesk";
+  src: url(hk-grotesk.woff2), url(hk-grotesk.woff);
+}
+
+body {
+  font-family: "HK Grotesk", Arial;
+  font-size: 36px;
+  line-height: 1.25;
+  background-color: #fff;
+  color: #333;
+}
+
+header {
+  /* position fixed isn't fixed to the page, it's fixed to the browser window */
+  position: fixed;
+  top: 36px;
+  left: 36px;
+  /* this z-index puts it above everything else */
+  z-index: 1;
+}
+
+section {
+  background-color: #cbdee0;
+  min-height: 100vh;
+  padding: 80px;
+  /* flex helps with alignemnt */
+  display: flex;
+  /* centre aligns the div horizontally */
+  justify-content: center;
+  /* centres the div vertically */
+  align-items: center;
+}
+
+/* you need this to get the square and circle positioning absolute in relation to photograph not the page */
+div.content {
+  position: relative;
+}
+
+/* you can select a particular div with the class of square like this: */
+div.square {
+  width: 100px;
+  height: 100px;
+  background-color: #d54156;
+  /* positions absolute in relation to the photograph */
+  position: absolute;
+  top: 50px;
+  left: -50px;
+}
+
+/* this puts img under the photograph, becuase it comes before in the html */
+div.content img {
+  position: relative;
+}
+
+/* this div is empty but you style it with a size and a colour and it appears on the page */
+div.circle {
+  width: 100px;
+  height: 100px;
+  background-color: #5982a0;
+  /* position absolute in relation to the photograph */
+  position: absolute;
+  bottom: 50px;
+  right: -50px;
+  border-radius: 50%;
+}
+
+/* selects just the section with the class s2 */
+section.s2 {
+  background-color: #c5c5c5;
+}
+
+section.s2 div.square {
+  background-color: #d6ac35;
+}
+
+section.s2 div.circle {
+  background-color: #be3c52;
+}
+
+section.s3 {
+  background-color: #292121;
+}
+
+section.s3 div.square {
+  background-color: #5f3736;
+}
+
+section.s3 div.circle {
+  background-color: #6e5f67;
+}
+
+section.s4 {
+  background-color: #f3f1f2;
+}
+
+section.s4 div.square {
+  background-color: #d54156;
+}
+
+section.s4 div.circle {
+  background-color: #5982a0;
+}
+
+/* creating the progress bar at the top */
+div.progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #333333;
+  /* by default everything is 1 */
+  z-index: 1;
+}
